@@ -5,8 +5,8 @@ const clipboard = new ClipboardJS('.btn-clipboard', {
     const codeBlockID = trigger.getAttribute('data-clipboard-target').substr(1)
     let codeBlock = document.getElementById(codeBlockID).textContent
     codeBlock = codeBlock.replace(/\n\$/g, '\n\&') // eslint-disable-line no-useless-escape
-    if (codeBlock.charAt(0) === '$') {
-      codeBlock = codeBlock.substr(1)
+    if (codeBlock.startsWith(0) === '$ ') {
+      codeBlock = codeBlock.substr(2)
     }
     return codeBlock
   }
